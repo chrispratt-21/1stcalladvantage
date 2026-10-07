@@ -196,6 +196,52 @@
       color: #475569;
     }
 
+    /* ── Demo video ──────────────────────────────────────── */
+    .video-section { background: var(--light); }
+    /* 4:3 to match the source video's native 960x720 frame -- an
+       aspect-ratio box rather than a fixed height so it scales cleanly
+       at any width instead of letterboxing or cropping the picture. */
+    .video-frame {
+      position: relative;
+      max-width: 560px;
+      margin: 40px auto 0;
+      aspect-ratio: 4 / 3;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 20px 50px rgba(1,37,96,0.18);
+    }
+    .video-poster, .video-frame video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      background: #000;
+    }
+    /* Click-to-play facade: only the ~80KB poster loads with the page.
+       The 38MB video file itself isn't requested until a visitor
+       actually clicks play (see the script near the other inline
+       scripts, below the Koalendar embed). */
+    .video-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--green);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .video-play-btn:hover { background: var(--green2); transform: translate(-50%, -50%) scale(1.06); }
+    .video-play-btn svg { margin-left: 4px; } /* optical centering of the play triangle */
+
     /* ── Section base ────────────────────────────────────── */
     section { padding: 80px 48px; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
@@ -825,6 +871,20 @@
     <p class="hero-disclaimer">Response and follow-up timing vary based on advocate availability and configured coverage.</p>
   </div>
 
+  <!-- Demo video -->
+  <section class="video-section" id="demo">
+    <div class="section-inner" style="text-align:center;">
+      <p class="section-label">See It In Action</p>
+      <h2 class="section-title" style="max-width:700px; margin-left:auto; margin-right:auto;">A quick look at how FCA covers a lead for your agency.</h2>
+      <div class="video-frame" id="demo-video-frame">
+        <img src="fca-manage-agency-poster.jpg" alt="Preview of the First Call Advantage demo video" class="video-poster" loading="lazy">
+        <button type="button" class="video-play-btn" id="demo-play-btn" aria-label="Play video">
+          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#012560"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- Stats -->
   <div class="stat-bar">
     <div class="stats-grid">
@@ -1329,6 +1389,27 @@
       } else {
         rewriteBadges();
       }
+    })();
+  </script>
+
+  <script>
+    // Demo video click-to-play facade (#demo). Only the poster image loads
+    // with the page; the video element -- and the 38MB file it points to --
+    // is only created once a visitor actually clicks the play button.
+    (function () {
+      var frame = document.getElementById('demo-video-frame');
+      var playBtn = document.getElementById('demo-play-btn');
+      if (!frame || !playBtn) return;
+      playBtn.addEventListener('click', function () {
+        var video = document.createElement('video');
+        video.src = 'fca-manage-agency.mp4';
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        frame.innerHTML = '';
+        frame.appendChild(video);
+        video.play().catch(function () {});
+      });
     })();
   </script>
 
