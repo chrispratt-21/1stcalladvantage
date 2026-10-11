@@ -218,29 +218,6 @@
       object-fit: cover;
       background: #000;
     }
-    /* Click-to-play facade: only the ~80KB poster loads with the page.
-       The 38MB video file itself isn't requested until a visitor
-       actually clicks play (see the script near the other inline
-       scripts, below the Koalendar embed). */
-    .video-play-btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: var(--green);
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.35);
-      transition: background 0.2s, transform 0.15s;
-    }
-    .video-play-btn:hover { background: var(--green2); transform: translate(-50%, -50%) scale(1.06); }
-    .video-play-btn svg { margin-left: 4px; } /* optical centering of the play triangle */
 
     /* ── Section base ────────────────────────────────────── */
     section { padding: 80px 48px; }
@@ -878,9 +855,6 @@
       <h2 class="section-title" style="max-width:700px; margin-left:auto; margin-right:auto;">Whatever the moment calls for, we've got the lead.</h2>
       <div class="video-frame" id="demo-video-frame">
         <img src="fca-manage-agency-poster.jpg" alt="Preview of the First Call Advantage demo video" class="video-poster" loading="lazy">
-        <button type="button" class="video-play-btn" id="demo-play-btn" aria-label="Play video">
-          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#012560"/></svg>
-        </button>
       </div>
     </div>
   </section>
@@ -1393,24 +1367,45 @@
   </script>
 
   <script>
-    // Demo video click-to-play facade (#demo). Only the poster image loads
-    // with the page; the video element -- and the 38MB file it points to --
-    // is only created once a visitor actually clicks the play button.
+    // Demo video (#demo). Only the ~80KB poster loads with the page; the
+    // video element -- and the file it points to -- isn't created until
+    // this section actually scrolls into view, so a visitor who never
+    // reaches it never downloads it. Once visible, it autoplays on loop
+    // with no native controls, like an ambient background clip.
     (function () {
       var frame = document.getElementById('demo-video-frame');
-      var playBtn = document.getElementById('demo-play-btn');
-      if (!frame || !playBtn) return;
-      playBtn.addEventListener('click', function () {
+      if (!frame || typeof IntersectionObserver === 'undefined') return;
+      var started = false;
+      function start() {
+        if (started) return;
+        started = true;
         var video = document.createElement('video');
         video.src = 'fca-manage-agency-no-sound.mp4';
         video.poster = 'fca-manage-agency-poster.jpg';
-        video.controls = true;
         video.autoplay = true;
+        video.loop = true;
         video.playsInline = true;
+        // Always muted regardless of whether the underlying file has an
+        // audio track -- a deliberate choice (see conversation), and also
+        // what makes autoplay reliable across mobile browsers, which block
+        // unmuted autoplay outright. Controls are intentionally omitted so
+        // it reads as a seamless looping clip rather than a video player;
+        // that also means visitors can't pause it or turn sound on.
+        video.muted = true;
+        // No controls and nothing new to announce beyond the headline
+        // above it, so keep it out of the accessibility tree rather than
+        // exposing an unlabeled, uncontrollable video element.
+        video.setAttribute('aria-hidden', 'true');
         frame.innerHTML = '';
         frame.appendChild(video);
         video.play().catch(function () {});
-      });
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) start();
+        });
+      }, { rootMargin: '200px' });
+      observer.observe(frame);
     })();
   </script>
 
