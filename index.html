@@ -216,12 +216,28 @@
       overflow: hidden;
       clip-path: inset(0 round 16px);
       -webkit-clip-path: inset(0 round 16px);
-      background: #000;
+      /* Was #000. The remaining hairline seam some viewers saw on the
+         white title cards wasn't the frame leaking past the clip -- it's
+         sub-pixel anti-aliasing exactly at the rounded-corner boundary,
+         which happens no matter how tight the clip is. On a near-white
+         title card that 1px of blended edge reads as a visible dark
+         notch; against this near-white page background it's effectively
+         invisible, on both the white cards and the photo scenes. */
+      background: var(--light);
       box-shadow: 0 20px 50px rgba(1,37,96,0.18);
     }
     .video-poster, .video-frame video {
-      width: 100%;
-      height: 100%;
+      /* Oversized by 2% and centered (vs. a plain 100%/100%) so the
+         rounded clip above always cuts into real picture content instead
+         of landing exactly on the video's true edge -- that's where any
+         residual compositing-layer or anti-aliasing seam would otherwise
+         show. A couple of percent off the very edge of a background demo
+         clip is imperceptible. */
+      position: absolute;
+      top: -1%;
+      left: -1%;
+      width: 102%;
+      height: 102%;
       display: block;
       object-fit: cover;
       background: #000;
