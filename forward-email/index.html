@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forward Your APFM Leads to First Call Advantage</title>
+<meta name="description" content="A step-by-step guide to forwarding your A Place for Mom (APFM) lead emails to First Call Advantage in Gmail.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --navy:   #012560;
+    --slate:  #103771;
+    --green:  #9eca25;
+    --green2: #72921b;
+    --muted:  #64748b;
+    --light:  #f8fafc;
+    --white:  #ffffff;
+    --border: #e2e8f0;
+    --text:   #1e293b;
+    --sub:    #475569;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+  }
+
+  a { color: var(--slate); }
+
+  .section-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  nav {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  .nav-logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--navy);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+  }
+  .nav-logo span { color: var(--green2); }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--navy), var(--slate));
+    color: var(--white);
+    padding: 56px 24px 48px;
+  }
+  .hero-label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin: 0 0 16px;
+  }
+  .hero p {
+    font-size: 17px;
+    color: #cfd9ec;
+    max-width: 620px;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* Generic section spacing */
+  .section {
+    padding: 48px 0;
+  }
+  .section + .section {
+    border-top: 1px solid var(--border);
+  }
+  .section-label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--green2);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+    margin: 0 0 14px;
+  }
+  .section-sub {
+    font-size: 16px;
+    color: var(--sub);
+    line-height: 1.65;
+    margin: 0 0 28px;
+    max-width: 640px;
+  }
+
+  /* Before you start checklist */
+  .problem-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+  .problem-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(158,202,37,0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--green2);
+  }
+  .problem-card h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    color: var(--navy);
+    font-weight: 700;
+  }
+  .problem-card p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--sub);
+  }
+  .problem-card code {
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 13.5px;
+    color: var(--navy);
+  }
+
+  /* Step cards */
+  .step-card {
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 28px;
+    background: var(--white);
+  }
+  .step-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px 24px;
+    background: var(--light);
+  }
+  .step-number {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 800;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-head h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+    color: var(--navy);
+    font-weight: 700;
+  }
+  .step-head p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--sub);
+    line-height: 1.6;
+  }
+  .step-head p code, .step-card .no-image-note code {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 13.5px;
+    color: var(--navy);
+  }
+  .step-shot {
+    padding: 20px 24px 24px;
+  }
+  .step-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .step-shot .caption {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .no-image-note {
+    margin: 0 24px 24px;
+    padding: 16px 18px;
+    background: rgba(1,37,96,0.05);
+    border: 1px solid rgba(1,37,96,0.14);
+    border-radius: 10px;
+    font-size: 14.5px;
+    color: var(--sub);
+    line-height: 1.65;
+  }
+
+  /* Confirm section */
+  .confirm-card {
+    background: var(--light);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .confirm-card p {
+    margin: 0 0 14px;
+    font-size: 15.5px;
+    color: var(--sub);
+    line-height: 1.7;
+  }
+  .confirm-card p:last-child { margin-bottom: 0; }
+  .confirm-card code {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 13.5px;
+    color: var(--navy);
+  }
+
+  .closing-note {
+    font-size: 15px;
+    color: var(--sub);
+    line-height: 1.7;
+  }
+
+  /* Footer, matching the live site */
+  footer {
+    background: var(--navy);
+    color: #b9c4dd;
+    padding: 40px 24px 28px;
+    text-align: center;
+    font-size: 13px;
+  }
+  .footer-logo {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 14px;
+  }
+  .footer-logo span { color: var(--green); }
+  footer p { margin: 4px 0; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 44px 20px 36px; }
+    .section { padding: 36px 0; }
+    .step-head { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="https://1stcalladvantage.com/"><span>First</span> Call Advantage</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="section-inner">
+    <div class="hero-label">Partner Setup Guide</div>
+    <h1>Forward Your APFM Leads to First Call Advantage</h1>
+    <p>A short, one-time setup in Gmail so that every lead referred to you through A Place for Mom reaches our team the moment it lands in your inbox. It takes about five minutes.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-inner">
+    <div class="section-label">Before You Start</div>
+    <h2 class="section-title">What you'll need</h2>
+    <p class="section-sub">This setup happens inside the Gmail account that actually receives your APFM referral emails, not a personal inbox. Make sure you're logged into the right one before you begin.</p>
+
+    <div class="problem-card">
+      <div class="problem-icon">1</div>
+      <div>
+        <h3>Access to the right inbox</h3>
+        <p>You'll need to be logged into the Gmail account where your APFM / A Place for Mom lead notifications currently arrive.</p>
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-icon">2</div>
+      <div>
+        <h3>Your First Call Advantage forwarding address</h3>
+        <p>This address is the same for every agency: <code>fcaleads@inbound.compassplace.com</code>. You'll enter it in Step 3 and double-check it in Step 7.</p>
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-icon">3</div>
+      <div>
+        <h3>About five minutes</h3>
+        <p>This is a one-time setup. Once the filter below is saved, every future APFM lead forwards automatically, with nothing more for you to do.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-inner">
+    <div class="section-label">Walkthrough</div>
+    <h2 class="section-title">Set up forwarding, step by step</h2>
+    <p class="section-sub">Each step below shows exactly where to click. The red circle marks the spot.</p>
+
+    <div class="step-card">
+      <div class="step-head">
+        <div class="step-number">1</div>
+        <div>
+          <h3>Open Gmail settings</h3>
+          <p>Log into the Gmail account that receives your APFM referral emails. In the top right corner, click the gear icon to open Quick settings.</p>
+        </div>
+      </div>
+      <div class="step-shot">
+        <img src="images/forward-step-1.png" alt="Gmail inbox with the Settings gear icon circled in the top right corner">
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-head">
+        <div class="step-number">2</div>
+        <div>
+          <h3>Open all settings</h3>
+          <p>The Quick settings panel slides out from the right. Click <strong>See all settings</strong> near the top.</p>
+        </div>
+      </div>
+      <div class="step-shot">
+        <img src="images/forward-step-2.png" alt="Gmail Quick settings panel with See all settings circled">
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-head">
+        <div class="step-number">3</div>
+        <div>
+          <h3>Add the forwarding address</h3>
+          <p>On the <strong>Forwarding and POP/IMAP</strong> tab, click <strong>Add a forwarding address</strong>. Enter <code>fcaleads@inbound.compassplace.com</code>, then click <strong>Next</strong>.</p>
+        </div>
+      </div>
+      <div class="step-shot">
+        <img src="images/forward-step-3.png" alt="Add a forwarding address dialog in Gmail with the Next button circled">
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-head">
+        <div class="step-number">4</div>
+        <div>
+          <h3>We confirm the forwarding address, not you</h3>
+          <p>This is the one step that happens on our end.</p>
+        </div>
+      </div>
+      <div class="no-image-note">
+        Gmail requires a confirmation link to be clicked before forwarding goes live, and that link is sent to <code>fcaleads@inbound.compassplace.com</code>, not to your inbox. Because that's a First Call Advantage address, our team receives it and clicks to confirm it. There's nothing for you to do here. If you haven't heard that forwarding is confirmed within one business day of completing Step 3, reach out to your First Call Advantage contact and we'll track it down.
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-head">
+        <div class="step-number">5</div>
+        <div>
+          <h3>Start a new filter</h3>
+          <p>Click the <strong>Filters and Blocked Addresses</strong> tab, then click <strong>Create a new filter</strong>.</p>
+        </div>
+      </div>
+      <div class="step-shot">
+        <img src="images/forward-step-5.png" alt="Gmail Filters and Blocked Addresses tab with Create a new filter circled">
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-head">
+        <div class="step-number">6</div>
+        <div>
+          <h3>Match APFM's sending address</h3>
+          <p>In the <strong>From</strong> field, enter <code>referrals@agingcare.com</code>. This is the actual address APFM sends your lead notifications from. Leave the other fields blank, then click <strong>Create filter</strong> to continue.</p>
+        </div>
+      </div>
+      <div class="step-shot">
+        <img src="images/forward-step-6.png" alt="Gmail filter creation box with the From field filled in and Create filter circled">
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-head">
+        <div class="step-number">7</div>
+        <div>
+          <h3>Turn on forwarding for this filter</h3>
+          <p>On the next screen, check the box next to <strong>Forward it to</strong> and make sure <code>fcaleads@inbound.compassplace.com</code> is selected in the dropdown. Then click the blue <strong>Create filter</strong> button at the bottom to save everything.</p>
+        </div>
+      </div>
+      <div class="step-shot">
+        <img src="images/forward-step-7.png" alt="Gmail filter actions screen with the Forward it to checkbox circled">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-inner">
+    <div class="section-label">Last Check</div>
+    <h2 class="section-title">How to confirm it's working</h2>
+    <div class="confirm-card">
+      <p>Once the filter is saved, go back to <strong>Settings &gt; Forwarding and POP/IMAP</strong>. You should see "Forward a copy of incoming mail to" selected, with your First Call Advantage address showing as confirmed rather than pending. If it still says pending, the confirmation in Step 4 hasn't gone through yet, contact your First Call Advantage partner contact and we'll sort it out.</p>
+      <p>The simplest real-world test is just to wait for your next APFM referral. If a lead lands in your inbox and you don't hear from us that it came through, let your contact know so we can check on our end.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-inner">
+    <p class="closing-note">If anything on this page doesn't match what you're seeing in Gmail, reach out to your First Call Advantage contact and we'll walk through it together.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><span>First</span> Call Advantage</div>
+  <p>A service of Compass Place &nbsp;&bull;&nbsp; &copy; 2026 Compass Place LLC. All rights reserved.</p>
+  <p>12175 Visionary Way, Fishers, IN 46038</p>
+</footer>
+
+</body>
+</html>
