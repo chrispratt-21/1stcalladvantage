@@ -236,6 +236,35 @@
     line-height: 1.65;
   }
 
+  .wait-banner {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: #fff8ec;
+    border: 1.5px solid #f2d49b;
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: -8px 0 28px;
+  }
+  .wait-banner-icon {
+    flex-shrink: 0;
+    font-size: 20px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .wait-banner h4 {
+    margin: 0 0 6px;
+    font-size: 15.5px;
+    color: #8a5a10;
+    font-weight: 700;
+  }
+  .wait-banner p {
+    margin: 0;
+    font-size: 14.5px;
+    color: #8a6a35;
+    line-height: 1.6;
+  }
+
   /* Confirm section */
   .confirm-card {
     background: var(--light);
@@ -391,7 +420,15 @@
         </div>
       </div>
       <div class="no-image-note">
-        Gmail requires a confirmation link to be clicked before forwarding goes live, and that link is sent to <code>fcaleads@inbound.compassplace.com</code>, not to your inbox. Because that's a First Call Advantage address, our team receives it and clicks to confirm it. There's nothing for you to do here. If you haven't heard that forwarding is confirmed within one business day of completing Step 3, reach out to your First Call Advantage contact and we'll track it down.
+        Gmail requires a confirmation link to be clicked before forwarding goes live, and that link is sent to <code>fcaleads@inbound.compassplace.com</code>, not to your inbox. Because that's a First Call Advantage address, our team receives it and clicks to confirm it, usually within one business day. Gmail does not notify you when this happens, so we'll follow up with you directly once it's done. If you haven't heard from us within one business day of completing Step 3, reach out to your First Call Advantage contact and we'll track it down.
+      </div>
+    </div>
+
+    <div class="wait-banner">
+      <div class="wait-banner-icon">&#9208;</div>
+      <div>
+        <h4>Wait for First Call Advantage to confirm before continuing</h4>
+        <p>Gmail won't forward any mail, through the filter you're about to build or otherwise, until the address above is confirmed on our end. Once we let you know it's confirmed, go ahead and pick up with Step 5.</p>
       </div>
     </div>
 
