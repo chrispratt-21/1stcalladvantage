@@ -240,28 +240,29 @@
     display: flex;
     gap: 16px;
     align-items: flex-start;
-    background: #fff8ec;
-    border: 1.5px solid #f2d49b;
+    background: rgba(158,202,37,0.08);
+    border: 1.5px solid rgba(114,146,27,0.35);
     border-radius: 14px;
     padding: 20px 22px;
     margin: -8px 0 28px;
   }
   .wait-banner-icon {
     flex-shrink: 0;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1;
     margin-top: 2px;
+    color: var(--green2);
   }
   .wait-banner h4 {
     margin: 0 0 6px;
     font-size: 15.5px;
-    color: #8a5a10;
+    color: var(--green2);
     font-weight: 700;
   }
   .wait-banner p {
     margin: 0;
     font-size: 14.5px;
-    color: #8a6a35;
+    color: #536b2e;
     line-height: 1.6;
   }
 
@@ -420,15 +421,15 @@
         </div>
       </div>
       <div class="no-image-note">
-        Gmail requires a confirmation link to be clicked before forwarding goes live, and that link is sent to <code>fcaleads@inbound.compassplace.com</code>, not to your inbox. Because that's a First Call Advantage address, our team receives it and clicks to confirm it, usually within one business day. Gmail does not notify you when this happens, so we'll follow up with you directly once it's done. If you haven't heard from us within one business day of completing Step 3, reach out to your First Call Advantage contact and we'll track it down.
+        Gmail requires a confirmation link to be clicked before forwarding goes live, and that link is sent to <code>fcaleads@inbound.compassplace.com</code>, not to your inbox. If you're already set up with First Call Advantage, our system recognizes the request automatically and confirms it within a few minutes, nobody has to manually click anything. If you're new to First Call Advantage, or this is the first time your agency has gone through this process, that automatic match may not apply yet, so our team completes it manually, usually within one business day, and we'll follow up with you directly once it's done.
       </div>
     </div>
 
     <div class="wait-banner">
-      <div class="wait-banner-icon">&#9208;</div>
+      <div class="wait-banner-icon">&#9889;</div>
       <div>
-        <h4>Wait for First Call Advantage to confirm before continuing</h4>
-        <p>Gmail won't forward any mail, through the filter you're about to build or otherwise, until the address above is confirmed on our end. Once we let you know it's confirmed, go ahead and pick up with Step 5.</p>
+        <h4>Confirmation is usually automatic</h4>
+        <p>Most agencies won't need to wait, go ahead and continue to Step 5 below. If you're new to First Call Advantage, or it's been more than a few minutes since Step 3, confirmation may still need a quick manual check on our end. Step 7 will tell you how to confirm it went through before you finish.</p>
       </div>
     </div>
 
@@ -437,7 +438,7 @@
         <div class="step-number">5</div>
         <div>
           <h3>Start a new filter</h3>
-          <p>Click the <strong>Filters and Blocked Addresses</strong> tab, then click <strong>Create a new filter</strong>.</p>
+          <p>First, reload Gmail in your browser. This makes sure Gmail has picked up the newly confirmed address. Then open the <strong>Filters and Blocked Addresses</strong> tab and click <strong>Create a new filter</strong>.</p>
         </div>
       </div>
       <div class="step-shot">
@@ -463,7 +464,7 @@
         <div class="step-number">7</div>
         <div>
           <h3>Turn on forwarding for this filter</h3>
-          <p>On the next screen, check the box next to <strong>Forward it to</strong> and make sure <code>fcaleads@inbound.compassplace.com</code> is selected in the dropdown. Then click the blue <strong>Create filter</strong> button at the bottom to save everything.</p>
+          <p>Check the box next to <strong>Forward it to</strong>, then choose <code>fcaleads@inbound.compassplace.com</code> from the dropdown. If that address isn't in the list, reload Gmail and check again. If it still isn't there, the forwarding approval hasn't gone through, contact us and we'll sort it out before you finish this step. Once it's selected, click the blue <strong>Create filter</strong> button at the bottom to save everything.</p>
         </div>
       </div>
       <div class="step-shot">
