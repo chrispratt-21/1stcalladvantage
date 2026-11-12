@@ -181,6 +181,32 @@
       display: inline-block;
     }
     .btn-primary:hover { background: var(--green2); transform: translateY(-1px); }
+    /* Secondary hero action keeps the service inquiry primary. */
+    .btn-checkup-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid rgba(255,255,255,0.6);
+      background: transparent;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      transition: border-color 0.2s, background 0.2s;
+      text-align: center;
+    }
+    .btn-checkup-outline:hover,
+    .btn-checkup-outline:focus-visible {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.1);
+    }
+    .btn-checkup-outline:focus-visible,
+    .checkup-resource-link:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 4px;
+    }
+
     /* .hero .hero-disclaimer (two classes) rather than just
        .hero-disclaimer -- needs to out-specificity ".hero p" above,
        which sets margin: 0 auto 40px on every <p> in the hero
@@ -732,6 +758,40 @@
     .audience-item p { font-size: 14px; color: var(--sub); line-height: 1.6; }
     .audience-emoji { font-size: 36px; }
 
+    /* ── Free Growth Checkup resource ──────────────────────── */
+    .checkup-resource { background: var(--white); }
+    .checkup-resource-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
+      gap: 32px;
+      align-items: center;
+      padding: 42px 46px;
+      border-radius: 20px;
+      border: 1.5px solid var(--border);
+      background: var(--light);
+    }
+    .checkup-resource-card .section-title { margin-bottom: 14px; }
+    .checkup-resource-card .section-sub { max-width: 660px; font-size: 16px; }
+    .checkup-resource-action { text-align: center; }
+    .checkup-resource-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 320px;
+      padding: 17px 20px;
+      border-radius: 10px;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 16px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .checkup-resource-link:hover { background: var(--slate); }
+    .checkup-resource-note { color: var(--muted); font-size: 13px; margin-top: 12px; }
+
     /* ── CTA ─────────────────────────────────────────────── */
     .cta-section {
       background: var(--green);
@@ -809,6 +869,8 @@
       .form-two-col { grid-template-columns: 1fr; gap: 0; }
       .benefits-grid { grid-template-columns: 1fr; }
       .audience-list { grid-template-columns: 1fr; }
+      .checkup-resource-card { grid-template-columns: 1fr; padding: 30px 24px; gap: 26px; }
+      .checkup-resource-action { text-align: left; }
       .cta-section { padding: 60px 24px; }
       footer { padding: 40px 24px; }
       .footer-links { flex-wrap: wrap; gap: 16px; }
@@ -871,6 +933,7 @@
     <p>Home care sales isn't one moment, it's two. First Call Advantage covers both: an on-duty advocate ready to reach new marketplace leads the instant they arrive, and a patient, cadenced follow-up service for the families who don't say yes right away. One team, working both ends of your pipeline, so a slow "not yet" never quietly becomes a lost lead.</p>
     <div class="hero-cta">
       <a href="#contact" class="btn-primary">Request Information</a>
+      <a href="https://checkup.1stcalladvantage.com/" class="btn-checkup-outline">Free Agency Growth Checkup &rarr;</a>
     </div>
     <p class="hero-disclaimer">Response and follow-up timing vary based on advocate availability and configured coverage.</p>
   </div>
@@ -1177,6 +1240,23 @@
     </div>
   </section>
 
+  <!-- Free Growth Checkup: helpful resource for owners not ready to inquire -->
+  <section class="checkup-resource" id="growth-checkup" aria-labelledby="checkup-resource-heading">
+    <div class="section-inner">
+      <div class="checkup-resource-card">
+        <div>
+          <p class="section-label">Free Resource for Home Care Agency Owners</p>
+          <h2 class="section-title" id="checkup-resource-heading">Where is your next growth opportunity?</h2>
+          <p class="section-sub">Take our free, personalized Growth Checkup to see what's working, where you may be losing opportunities, and what to focus on next. Explore referrals, inquiry response, follow-up, and more, at your own pace.</p>
+        </div>
+        <div class="checkup-resource-action">
+          <a href="https://checkup.1stcalladvantage.com/" class="checkup-resource-link">Start My Free Growth Checkup <span aria-hidden="true">&rarr;</span></a>
+          <p class="checkup-resource-note">Start in 2–3 minutes. No contact information required to begin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-section">
     <h2>Ready to stop losing leads, early or late?</h2>
@@ -1444,6 +1524,7 @@
       <a href="#long-game">Long Game</a>
       <a href="#trust">Who's Calling</a>
       <a href="#benefits">Benefits</a>
+      <a href="#growth-checkup">Free Growth Checkup</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
       <a href="#contact">Contact</a>
