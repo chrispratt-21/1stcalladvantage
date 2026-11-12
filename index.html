@@ -181,27 +181,18 @@
       display: inline-block;
     }
     .btn-primary:hover { background: var(--green2); transform: translateY(-1px); }
-    /* Secondary hero action keeps the service inquiry primary. */
-    .btn-checkup-outline {
+    /* Match the two hero actions in size, color, and responsive behavior. */
+    .hero-cta .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border: 1.5px solid rgba(255,255,255,0.6);
-      background: transparent;
-      color: var(--white);
-      font-weight: 700;
-      font-size: 16px;
-      padding: 14px 28px;
-      border-radius: 10px;
-      transition: border-color 0.2s, background 0.2s;
+      flex: 0 1 290px;
+      min-height: 56px;
+      padding: 15px 20px;
       text-align: center;
+      max-width: 100%;
     }
-    .btn-checkup-outline:hover,
-    .btn-checkup-outline:focus-visible {
-      border-color: var(--white);
-      background: rgba(255,255,255,0.1);
-    }
-    .btn-checkup-outline:focus-visible,
+    .hero-cta .btn-primary:focus-visible,
     .checkup-resource-link:focus-visible {
       outline: 3px solid var(--green);
       outline-offset: 4px;
@@ -933,7 +924,7 @@
     <p>Home care sales isn't one moment, it's two. First Call Advantage covers both: an on-duty advocate ready to reach new marketplace leads the instant they arrive, and a patient, cadenced follow-up service for the families who don't say yes right away. One team, working both ends of your pipeline, so a slow "not yet" never quietly becomes a lost lead.</p>
     <div class="hero-cta">
       <a href="#contact" class="btn-primary">Request Information</a>
-      <a href="https://checkup.1stcalladvantage.com/" class="btn-checkup-outline">Free Agency Growth Checkup &rarr;</a>
+      <a href="https://checkup.1stcalladvantage.com/" class="btn-primary" target="_blank" rel="noopener noreferrer">Free Agency Growth Checkup</a>
     </div>
     <p class="hero-disclaimer">Response and follow-up timing vary based on advocate availability and configured coverage.</p>
   </div>
@@ -1250,7 +1241,7 @@
           <p class="section-sub">Take our free, personalized Growth Checkup to see what's working, where you may be losing opportunities, and what to focus on next. Explore referrals, inquiry response, follow-up, and more, at your own pace.</p>
         </div>
         <div class="checkup-resource-action">
-          <a href="https://checkup.1stcalladvantage.com/" class="checkup-resource-link">Start My Free Growth Checkup <span aria-hidden="true">&rarr;</span></a>
+          <a href="https://checkup.1stcalladvantage.com/" class="checkup-resource-link" target="_blank" rel="noopener noreferrer">Start My Free Growth Checkup</a>
           <p class="checkup-resource-note">Start in 2–3 minutes. No contact information required to begin.</p>
         </div>
       </div>
